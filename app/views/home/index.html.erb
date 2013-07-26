@@ -1,2 +1,11 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1 style="text-align:center; font-size:200%">A Blog</h1>
+
+<% Post.all.each do |p| %>
+	<div style="margin-top:100px;margin-left:auto;margin-right:auto;width:70%">
+		<article>
+			<h4 style="text-transform:uppercase; font:cousine; font-size:200%"><%= p.date %></h4>
+			<h3 style="font-size:200%">{<%= p.title %>}</h3>
+			<p><%= p.body.html_safe %></p>
+		</article>
+	</div>
+<% end %>
